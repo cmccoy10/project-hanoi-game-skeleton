@@ -9,13 +9,8 @@ class HanoiGame {
   }
 
   isValidMove(startTowerIdx, endTowerIdx) {
-    if (this.towers[endTowerIdx].length === 0) {
-      return true;
-    }
-
-    if (this.towers[startTowerIdx][this.towers[startTowerIdx].length - 1]
-      < this.towers[endTowerIdx][this.towers[endTowerIdx].length - 1]) {
-      return true;
+    if (startTowerIdx > 2 || endTowerIdx > 2){
+        return false;
     }
 
     if (startTowerIdx == endTowerIdx) {
@@ -26,7 +21,16 @@ class HanoiGame {
       return false;
     }
 
-    // return false;
+    if (this.towers[endTowerIdx].length === 0) {
+        return true;
+    }
+
+    if (this.towers[startTowerIdx][this.towers[startTowerIdx].length - 1]
+        < this.towers[endTowerIdx][this.towers[endTowerIdx].length - 1]) {
+        return true;
+    }
+
+
   }
 
   move(startTowerIdx, endTowerIdx) { }
