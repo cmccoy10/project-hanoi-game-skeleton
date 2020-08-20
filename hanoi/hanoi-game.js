@@ -9,27 +9,32 @@ class HanoiGame {
   }
 
   isValidMove(startTowerIdx, endTowerIdx) {
-    if (startTowerIdx > 2 || endTowerIdx > 2){
-        return false;
+    let starting = this.towers[startTowerIdx];
+    let ending = this.towers[endTowerIdx];
+
+    if (startTowerIdx > 2 || endTowerIdx > 2) {
+      return false;
     }
 
     if (startTowerIdx == endTowerIdx) {
       return false;
     }
 
-    if (this.towers[startTowerIdx].length === 0) {
+    if (starting.length === 0) {
       return false;
     }
-
-    if (this.towers[endTowerIdx].length === 0) {
-        return true;
+    if (ending.length === 0) {
+      return true;
     }
 
-    if (this.towers[startTowerIdx][this.towers[startTowerIdx].length - 1]
-        < this.towers[endTowerIdx][this.towers[endTowerIdx].length - 1]) {
-        return true;
+    if (starting[starting.length - 1]
+      < ending[ending.length - 1]) {
+      return true;
     }
 
+    if (starting[starting.length - 1] > ending[ending.length - 1]) {
+      return false;
+    }
 
   }
 
