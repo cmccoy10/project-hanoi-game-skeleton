@@ -12,6 +12,10 @@ class HanoiGame {
       if (this.towers[endTowerIdx].length === 0){
         return true;
       }
+
+      if (this.tower[startTowerIdx][this.towers[startTowerIdx].length - 1] < this.tower[endTowerIdx][this.towers[endTowerIdx].length - 1]){
+
+      }
       return false;
   }
 
