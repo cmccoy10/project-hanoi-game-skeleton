@@ -1,7 +1,19 @@
 class HanoiGame {
-  constructor() {}
+  constructor(towers) {
+      // handles default value of towers if nothing is passed in
+      if (towers !== undefined){
+          this.towers = towers;
+      } else {
+          this.towers = [[3, 2, 1], [], []];
+      }
+  }
 
-  isValidMove(startTowerIdx, endTowerIdx) {}
+  isValidMove(startTowerIdx, endTowerIdx) {
+      if (this.towers[endTowerIdx].length === 0){
+        return true;
+      }
+      return false;
+  }
 
   move(startTowerIdx, endTowerIdx) {}
 
