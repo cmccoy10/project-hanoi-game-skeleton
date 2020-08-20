@@ -38,9 +38,22 @@ class HanoiGame {
 
   }
 
-  move(startTowerIdx, endTowerIdx) { }
+  move(startTowerIdx, endTowerIdx) {
+      let movingDisk = "";
+    if (this.isValidMove(startTowerIdx, endTowerIdx)){
+        movingDisk = this.towers[startTowerIdx].pop();
+        this.towers[endTowerIdx].push(movingDisk);
+        return true;
+    }
+    return false;
+  }
 
-  isWon() { }
+  isWon() {
+      if (this.towers[1].length === 3 || this.towers[2].length === 3) {
+          return true;
+      }
+      return false;
+  }
 
   // the below methods are complete and do not need to be modified
   print() {
