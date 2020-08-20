@@ -1,27 +1,37 @@
 class HanoiGame {
   constructor(towers) {
-      // handles default value of towers if nothing is passed in
-      if (towers !== undefined){
-          this.towers = towers;
-      } else {
-          this.towers = [[3, 2, 1], [], []];
-      }
+    // handles default value of towers if nothing is passed in
+    if (towers !== undefined) {
+      this.towers = towers;
+    } else {
+      this.towers = [[3, 2, 1], [], []];
+    }
   }
 
   isValidMove(startTowerIdx, endTowerIdx) {
-      if (this.towers[endTowerIdx].length === 0){
-        return true;
-      }
+    if (this.towers[endTowerIdx].length === 0) {
+      return true;
+    }
 
-      if (this.tower[startTowerIdx][this.towers[startTowerIdx].length - 1] < this.tower[endTowerIdx][this.towers[endTowerIdx].length - 1]){
+    if (this.towers[startTowerIdx][this.towers[startTowerIdx].length - 1]
+      < this.towers[endTowerIdx][this.towers[endTowerIdx].length - 1]) {
+      return true;
+    }
 
-      }
+    if (startTowerIdx == endTowerIdx) {
       return false;
+    }
+
+    if (this.towers[startTowerIdx].length === 0) {
+      return false;
+    }
+
+    // return false;
   }
 
-  move(startTowerIdx, endTowerIdx) {}
+  move(startTowerIdx, endTowerIdx) { }
 
-  isWon() {}
+  isWon() { }
 
   // the below methods are complete and do not need to be modified
   print() {
